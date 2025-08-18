@@ -21,6 +21,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 import { useState } from "react"
+import { FaGithub, FaGoogle } from "react-icons/fa"
+
 
 
 const formSchema = z.object({
@@ -52,7 +54,7 @@ export const SignInView = () => {
             }, {
             onSuccess: () => {
                 setPending(false)
-                router.prefetch("/")
+                router.push("/")
 
             },
             onError: ({ error }) => {
@@ -125,7 +127,7 @@ export const SignInView = () => {
                                 <Button
                                     disabled={pending}
                                     type="submit"
-                                    className="w-full"
+                                    className="w-full cursor-pointer"
                                 >
                                     Sign in
                                 </Button>
@@ -138,18 +140,28 @@ export const SignInView = () => {
                                     <Button
                                         variant={"outline"}
                                         type="button"
-                                        className="w-full"
+                                        className="w-full cursor-pointer"
                                         disabled={pending}
+                                        onClick={() => {
+                                            authClient.signIn.social({
+                                                provider: "google"
+                                            })
+                                        }}
                                     >
-                                        Google
+                                        <FaGoogle />
                                     </Button>
                                     <Button
                                         variant={"outline"}
                                         type="button"
-                                        className="w-full"
+                                        className="w-full cursor-pointer"
                                         disabled={pending}
+                                        onClick={() => {
+                                            authClient.signIn.social({
+                                                provider: "github"
+                                            })
+                                        }}
                                     >
-                                        Github
+                                        <FaGithub />
                                     </Button>
                                 </div>
                                 <div className="text-center text-sm">
