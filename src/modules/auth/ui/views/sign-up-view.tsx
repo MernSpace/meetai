@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Alert, AlertTitle } from "@/components/ui/alert"
 import { Card, CardContent } from "@/components/ui/card"
 import { OctagonAlertIcon } from "lucide-react"
+import { FaGithub, FaGoogle } from "react-icons/fa"
 
 import {
     Form,
@@ -56,11 +57,12 @@ export const SignUpView = () => {
             {
                 name: data.name,
                 email: data.email,
-                password: data.password
+                password: data.password,
+                callbackURL: "/"
             }, {
             onSuccess: () => {
                 setPending(false)
-                router.prefetch("/")
+                router.push("/")
 
             },
             onError: ({ error }) => {
@@ -171,7 +173,7 @@ export const SignUpView = () => {
                                 <Button
                                     disabled={pending}
                                     type="submit"
-                                    className="w-full"
+                                    className="w-full cursor-pointer"
                                 >
                                     Sign in
                                 </Button>
@@ -184,18 +186,28 @@ export const SignUpView = () => {
                                     <Button
                                         variant={"outline"}
                                         type="button"
-                                        className="w-full"
+                                        className="w-full cursor-pointer"
                                         disabled={pending}
+                                        onClick={() => {
+                                            authClient.signIn.social({
+                                                provider: "google"
+                                            })
+                                        }}
                                     >
-                                        Google
+                                        <FaGoogle />
                                     </Button>
                                     <Button
                                         variant={"outline"}
                                         type="button"
-                                        className="w-full"
+                                        className="w-full cursor-pointer"
                                         disabled={pending}
+                                        onClick={() => {
+                                            authClient.signIn.social({
+                                                provider: "github"
+                                            })
+                                        }}
                                     >
-                                        Github
+                                        <FaGithub />
                                     </Button>
                                 </div>
                                 <div className="text-center text-sm">
