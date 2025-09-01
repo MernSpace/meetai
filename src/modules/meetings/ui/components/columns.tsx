@@ -1,16 +1,15 @@
 "use client"
 import { format } from 'date-fns'
-import humanizeDration from "humanize-duration"
+import humanizeDuration from "humanize-duration"
 import { ColumnDef } from "@tanstack/react-table"
 import { MeetingGetMany } from "../../types"
 import { GeneratedAvatar } from "@/components/generated-avatar"
-import { CircleCheckIcon, CircleXIcon, ClockArrowUpIcon, ClockFadingIcon, CornerDownRightIcon, LoaderIcon, VideoIcon } from "lucide-react"
+import { CircleCheckIcon, CircleXIcon, ClockArrowUpIcon, ClockFadingIcon, CornerDownRightIcon, LoaderIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { cn } from '@/lib/utils'
-import { ro } from 'date-fns/locale'
 
 function formatDuration(seconds: number) {
-    return humanizeDration(seconds * 1000, {
+    return humanizeDuration(seconds * 1000, {
         largest: 1,
         round: true,
         units: ["h", "m", "s"]
