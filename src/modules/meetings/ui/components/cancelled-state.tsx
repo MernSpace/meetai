@@ -6,7 +6,7 @@ export const CancelledState = () => {
             <EmptyState
                 image="/cancelled.svg"
                 title="Meeting is cancelled"
-                description="Meeting will end once all participants have left"
+                description="This meeting was cancelled. No further actions are available."
 
             />
 
