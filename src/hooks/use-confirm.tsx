@@ -41,7 +41,7 @@ export const useConfirm = (
                     variant={"outline"}
                     className="w-full lg:w-auto"
                 >
-                    Cancle
+                    Cancel
                 </Button>
                 <Button
                     onClick={handleConfirm}
