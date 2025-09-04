@@ -30,7 +30,7 @@ Example:
 - Feature X automatically does Y
 - Mention of integration with Z
     `.trim(),
-    model: openai({ model: "gpt-4o", apiKey: process.env.OPEN_AI_KEY })
+    model: openai({ model: "gpt-4o-mini", apiKey: process.env.OPEN_AI_KEY })
 })
 
 
