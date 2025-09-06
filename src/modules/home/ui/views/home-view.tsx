@@ -37,7 +37,7 @@ export const HomeView = () => {
             {/* Welcome Section */}
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back, Sifat!</h1>
-                <p className="text-gray-600">Here's what's happening with your AI meetings today.</p>
+                <p className="text-gray-600">Here&apos;s what&apos;s</p>
             </div>
 
             {/* Stats Grid */}
@@ -127,8 +127,8 @@ export const HomeView = () => {
                                 </div>
                                 <div className="flex items-center space-x-4">
                                     <div className={`px-3 py-1 rounded-full text-xs font-medium ${meeting.status === 'Processing'
-                                            ? 'bg-yellow-100 text-yellow-800'
-                                            : 'bg-green-100 text-green-800'
+                                        ? 'bg-yellow-100 text-yellow-800'
+                                        : 'bg-green-100 text-green-800'
                                         }`}>
                                         {meeting.status === 'Processing' && (
                                             <div className="flex items-center">
