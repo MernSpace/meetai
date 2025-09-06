@@ -114,7 +114,7 @@ export const PricingCard = ({
                 </div>
             </div>
             <div className="py-6">
-                <Separator className="opcity-19 text-[#5D6B68]" />
+                <Separator className="opacity-20 text-[#5D6B68]" />
             </div>
             <Button className="w-full"
                 size={"lg"}
