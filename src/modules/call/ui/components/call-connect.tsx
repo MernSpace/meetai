@@ -36,13 +36,14 @@ export const CallConnect = ({
                 image: userImage
             },
             tokenProvider: generateToken
-        })
-        setClient(_client)
+        });
+        setClient(_client);
+
         return () => {
-            _client.disconnectUser(),
-                setClient(undefined)
-        }
-    }, [userId, userName, userImage, generateToken])
+            _client.disconnectUser();
+            setClient(undefined);
+        };
+    }, [userId, userName, userImage, generateToken]);
 
     const [call, setCall] = useState<Call>()
     useEffect(() => {
